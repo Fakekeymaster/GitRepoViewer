@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>GitHub Repositories Viewer</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>GitHub Repositories Viewer</h1>
+        <label for="username">Enter GitHub Username:</label>
+        <input type="text" id="username" placeholder="Enter GitHub username">
+        <label for="perPage">Repositories per page:</label>
+        <select id="perPage" onchange="getRepositories()">
+            <option value="10">10</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+        <label for="search">Search Repositories:</label>
+        <input type="text" id="search" placeholder="Search repositories" oninput="getRepositories()">
+        <button onclick="getRepositories()">Get Repositories</button>
+        <!-- User Profile Section -->
+        <div id="user-profile"></div>
+        <div id="repositories"></div>
+        <div id="loader" class="loader"></div>
+        <!-- Pagination Section -->
+        <div id="pagination" class="pagination">
+            <div id="pageNumbers" class="page-numbers"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
